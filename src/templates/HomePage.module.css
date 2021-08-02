@@ -1,0 +1,96 @@
+.read-link-container {
+  display: flex;
+  align-items: flex-end;
+  background-size: 200% 260%;
+  background-image: linear-gradient(to top, #e7e51d 50%, transparent 50%);
+  width: max-content;
+  margin-top: 1.5rem;
+  border-bottom: 3px solid #e7e51d;
+  padding-bottom: 2px;
+  cursor: pointer;
+  color: white;
+  font-family: "Hepta Slab Bold";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 25px;
+  -webkit-transition: background-position 300ms, color 300ms ease;
+  -moz-transition: background-position 300ms, color 300ms ease;
+  -ms-transition: background-position 300ms, color 300ms ease;
+  -o-transition: background-position 300ms, color 300ms ease;
+  transition: background-position 300ms, color 300ms ease;
+}
+
+.read-link-container:hover {
+  color: black;
+  border-color: #e7e51d;
+  background-image: linear-gradient(to top, #e7e51d 51%, transparent 50%);
+  background-position: 0 100%;
+  -webkit-transition: background-position 300ms, color 300ms ease;
+  -moz-transition: background-position 300ms, color 300ms ease;
+  -ms-transition: background-position 300ms, color 300ms ease;
+  -o-transition: background-position 300ms, color 300ms ease;
+  transition: background-position 300ms, color 300ms ease;
+}
+
+.read-link-icon {
+  display: inline;
+  fill: #e7e51d;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.read-link-container:hover .read-link-icon {
+  fill: black;
+}
+
+.get-started-link-container {
+  display: flex;
+  align-items: flex-end;
+  background-size: 200% 260%;
+  background-image: linear-gradient(to top, black 50%, transparent 50%);
+  width: max-content;
+  margin-top: 1.5rem;
+  border-bottom: 3px solid black;
+  padding-bottom: 2px;
+  cursor: pointer;
+  color: black;
+  font-family: "Hepta Slab Bold";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 23px;
+  -webkit-transition: background-position 300ms, color 300ms ease;
+  -moz-transition: background-position 300ms, color 300ms ease;
+  -ms-transition: background-position 300ms, color 300ms ease;
+  -o-transition: background-position 300ms, color 300ms ease;
+  transition: background-position 300ms, color 300ms ease;
+}
+
+.get-started-link-container:hover {
+  color: #e7e51d;
+  border-color: black;
+  background-image: linear-gradient(to top, black 51%, transparent 50%);
+  background-position: 0 100%;
+  -webkit-transition: background-position 300ms, color 300ms ease;
+  -moz-transition: background-position 300ms, color 300ms ease;
+  -ms-transition: background-position 300ms, color 300ms ease;
+  -o-transition: background-position 300ms, color 300ms ease;
+  transition: background-position 300ms, color 300ms ease;
+}
+
+.get-started-link-icon {
+  display: inline;
+  fill: black;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.get-started-link-container:hover .get-started-link-icon {
+  fill: #e7e51d;
+}
+
+@screen md {
+  .read-link-container,
+  .get-started-link-container {
+    @apply text-xl leading-snug mt-10;
+  }
+}

@@ -1,55 +1,43 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
+import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 
-import * as React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
-import "./layout.css"
+import useSiteMetadata from "../hooks/useSiteMetadata";
+import Navbar from "./Navbar";
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
+  const { title, description } = useSiteMetadata();
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [menuOpened, setMenuOpened] = useState(false);
+
+  useEffect(() => {
+    if (menuOpened) {
+      document.body.style.overflowY = "hidden";
+      document.getElementById("main-wrapper").style.overflowY = "hidden";
+    } else {
+      document.body.style.overflowY = "unset";
+      document.getElementById("main-wrapper").style.overflowY = "unset";
     }
-  `)
+  }, [menuOpened]);
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
-    </>
-  )
-}
+    <div>
+      <Helmet>
+        <html lang="en" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+      </Helmet>
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+      <main className="wrapper" id="main-wrapper">
+        <Navbar
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          setMenuOpened={setMenuOpened}
+        />
+        {children}
+      </main>
+    </div>
+  );
+};
 
-export default Layout
+export default Layout;
