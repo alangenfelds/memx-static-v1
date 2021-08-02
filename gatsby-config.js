@@ -54,6 +54,13 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "videos",
+        path: `${__dirname}/src/video`,
+      },
+    },
+    {
       resolve: `gatsby-remark-copy-linked-files`,
       options: {},
     },

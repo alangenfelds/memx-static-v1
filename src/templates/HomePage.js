@@ -1,24 +1,24 @@
-import React from "react";
-import { ChevronRightIcon } from "@heroicons/react/solid";
-import { ChevronLeftIcon } from "@heroicons/react/solid";
-import { SearchIcon } from "@heroicons/react/solid";
-import { useStaticQuery, graphql, Link } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
+import React from "react"
+import { ChevronRightIcon } from "@heroicons/react/solid"
+import { ChevronLeftIcon } from "@heroicons/react/solid"
+import { SearchIcon } from "@heroicons/react/solid"
+import { useStaticQuery, graphql, Link } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import {
   readLinkContainer,
   readLinkIcon,
   getStartedLinkContainer,
   getStartedLinkIcon,
-} from "./HomePage.module.css";
+} from "./HomePage.module.css"
 
 const HomePage = () => {
-  const data = useStaticQuery(pageQuery);
+  const data = useStaticQuery(pageQuery)
   return (
     <React.Fragment>
       <section className="section">
         <video id="background-video" autoPlay="autoplay" loop="loop" muted>
-          <source src="video/bg-video1.mp4" type="video/mp4" />
+          <source src={data.allFile.edges[0].node.publicURL} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </section>
@@ -655,10 +655,10 @@ const HomePage = () => {
         </div>
       </section>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage
 
 export const pageQuery = graphql`
   query {
@@ -677,5 +677,12 @@ export const pageQuery = graphql`
         gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
       }
     }
+    allFile(filter: { extension: { eq: "mp4" } }) {
+      edges {
+        node {
+          publicURL
+        }
+      }
+    }
   }
-`;
+`
