@@ -23,7 +23,7 @@ const HomePage = () => {
           {/* <source src={data.allFile.edges[0].node.publicURL} type="video/mp4" /> */}
           {/* <source src={bgVideo} type="video/mp4" /> */}
           <source
-            src="https://assets.mixkit.co/videos/preview/mixkit-exploding-ink-underwater-105-large.mp4"
+            src="https://assets.mixkit.co/videos/preview/mixkit-blurred-circular-lights-on-blue-1169-large.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
