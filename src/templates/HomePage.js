@@ -5,6 +5,8 @@ import { SearchIcon } from "@heroicons/react/solid"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
+import bgVideo from "../video/bg-video1.mp4"
+
 import {
   readLinkContainer,
   readLinkIcon,
@@ -18,7 +20,8 @@ const HomePage = () => {
     <React.Fragment>
       <section className="section">
         <video id="background-video" autoPlay="autoplay" loop="loop" muted>
-          <source src={data.allFile.edges[0].node.publicURL} type="video/mp4" />
+          {/* <source src={data.allFile.edges[0].node.publicURL} type="video/mp4" /> */}
+          <source src={bgVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </section>
