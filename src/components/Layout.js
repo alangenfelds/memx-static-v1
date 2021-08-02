@@ -1,24 +1,37 @@
-import React, { useState, useEffect } from "react";
-import { Helmet } from "react-helmet";
+import React, { useState, useEffect } from "react"
+import { Helmet } from "react-helmet"
 
-import useSiteMetadata from "../hooks/useSiteMetadata";
-import Navbar from "./Navbar";
+import useSiteMetadata from "../hooks/useSiteMetadata"
+import Navbar from "./Navbar"
 
 const Layout = ({ children }) => {
-  const { title, description } = useSiteMetadata();
+  const { title, description } = useSiteMetadata()
 
-  const [isOpen, setIsOpen] = useState(false);
-  const [menuOpened, setMenuOpened] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
+  const [menuOpened, setMenuOpened] = useState(false)
 
   useEffect(() => {
     if (menuOpened) {
-      document.body.style.overflowY = "hidden";
-      document.getElementById("main-wrapper").style.overflowY = "hidden";
+      document.body.style.overflowY = "hidden"
+      document.getElementById("main-wrapper").style.overflowY = "hidden"
     } else {
-      document.body.style.overflowY = "unset";
-      document.getElementById("main-wrapper").style.overflowY = "unset";
+      document.body.style.overflowY = "unset"
+      document.getElementById("main-wrapper").style.overflowY = "unset"
     }
-  }, [menuOpened]);
+  }, [menuOpened])
+
+  const handleResize = e => {
+    const innerWidth = e.target.innerWidth
+    if (innerWidth >= 1024) {
+      setMenuOpened(false)
+      setIsOpen(false)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
   return (
     <div>
@@ -37,7 +50,7 @@ const Layout = ({ children }) => {
         {children}
       </main>
     </div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout
