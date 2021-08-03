@@ -49,7 +49,7 @@ const HomePage = () => {
         name="news-ticker"
         className="w-news-ticker-mobile md:w-news-ticker h-news-ticker mt-14 lg:mt-20 text-white mx-5 lg:mx-16"
       >
-        <div className="flex justify-between p-5 h-20 bg-blue-dark font-ranuaBold text-sm md:text-base hovmd:text-yellow hover:bg-navy transition-colors ease-out 300">
+        <div className="flex justify-between p-5 h-20 bg-blue-dark font-ranuaBold text-sm md:text-base hover:bg-navy transition-colors ease-out 300">
           <div className="w-9/12">
             MEMX to launch new options exchange Q1 2022
           </div>
