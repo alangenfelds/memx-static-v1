@@ -409,7 +409,7 @@ const HomePage = () => {
           </div>
 
           {/* FOOTER LINKS */}
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-1 md:gap-12 lg:grid-cols-5 lg:grid-rows-1">
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 md:auto-rows-auto gap-1 md:gap-12 lg:grid-cols-5 lg:grid-rows-1">
             {/* LINK SET 1 */}
             <div className="flex flex-col space-y-4">
               <Link to="/">
