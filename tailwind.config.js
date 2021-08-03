@@ -53,7 +53,7 @@ module.exports = {
       },
       width: {
         "news-ticker": "441px",
-        "news-ticker-mobile": "411px",
+        "news-ticker-mobile": "391px",
       },
       height: {
         "news-ticker": "83px",
