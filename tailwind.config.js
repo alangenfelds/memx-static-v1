@@ -1,5 +1,5 @@
-const colors = require("tailwindcss/colors");
-const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors")
+const defaultTheme = require("tailwindcss/defaultTheme")
 
 module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}"],
@@ -53,6 +53,7 @@ module.exports = {
       },
       width: {
         "news-ticker": "441px",
+        "news-ticker-mobile": "411px",
       },
       height: {
         "news-ticker": "83px",
@@ -72,9 +73,9 @@ module.exports = {
           borderBottom: "3px solid yellow",
           paddingBottom: "2px",
         },
-      };
+      }
 
-      addUtilities(extendUnderline);
+      addUtilities(extendUnderline)
     },
   ],
-};
+}

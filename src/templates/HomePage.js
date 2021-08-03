@@ -47,7 +47,7 @@ const HomePage = () => {
       </section>
       <section
         name="news-ticker"
-        className="w-news-ticker h-news-ticker mt-14 lg:mt-20 text-white mx-5 lg:mx-16"
+        className="w-news-ticker-mobile md:w-news-ticker h-news-ticker mt-14 lg:mt-20 text-white mx-5 lg:mx-16"
       >
         <div className="flex justify-between p-5 h-20 bg-blue-dark font-ranuaBold text-sm md:text-base hovmd:text-yellow hover:bg-navy transition-colors ease-out 300">
           <div className="w-9/12">
@@ -409,9 +409,9 @@ const HomePage = () => {
           </div>
 
           {/* FOOTER LINKS */}
-          <div className="flex flex-col md:flex-row md:justify-between mt-10">
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-1 md:gap-12 lg:grid-cols-5">
             {/* LINK SET 1 */}
-            <div className="flex flex-col space-y-4 md:w-1/3 lg:w-1/5">
+            <div className="flex flex-col space-y-4">
               <Link to="/">
                 <div className="flex items-center mt-10 lg:mt-0">
                   <div className="text-xl font-ranuaBold text-yellow pr-1">
@@ -458,7 +458,7 @@ const HomePage = () => {
             </div>
 
             {/* LINK SET 2 */}
-            <div className="flex flex-col space-y-4 md:w-1/3 lg:w-1/5">
+            <div className="flex flex-col space-y-4">
               <Link to="/">
                 <div className="text-xl font-ranuaBold text-yellow  mt-10 lg:mt-0">
                   Exchange
@@ -518,9 +518,9 @@ const HomePage = () => {
             </div>
 
             {/* LINK SET 3 */}
-            <div className="flex flex-col space-y-4 md:w-1/3 lg:w-1/5">
+            <div className="flex flex-col space-y-4">
               <Link to="/" className="hidden md:block">
-                <div className="text-xl font-ranuaBold text-yellow  mt-10 lg:mt-0">
+                <div className="text-xl font-ranuaBold text-yellow  md:mt-10 lg:mt-0">
                   &nbsp;
                 </div>
               </Link>
@@ -568,7 +568,7 @@ const HomePage = () => {
             </div>
 
             {/* LINk SET 4 */}
-            <div className="md:hidden lg:flex flex-col space-y-4  lg:w-1/5">
+            <div className="lg:flex flex-col space-y-4">
               <div className="text-xl font-ranuaBold text-yellow  mt-10 lg:mt-0">
                 Insights
               </div>
@@ -586,49 +586,7 @@ const HomePage = () => {
             </div>
 
             {/* LINK SET 5 */}
-            <div className="md:hidden lg:flex flex-col space-y-4 w-3/5 lg:w-1/5">
-              <div className="text-xl font-ranuaBold text-yellow  mt-10 lg:mt-0">
-                Contact
-              </div>
-
-              <div className="text-lg font-ranuaLight text-white mt-4 lg:mt-0">
-                MEMX LLC 111 Town Square Place Suite 520 Jersey City, NJ 07310
-                <br />
-                <br />
-                +1 (833) 415-6369
-                <br />
-                memberx@memx.com
-              </div>
-
-              <div id="learn-more-link" className={readLinkContainer}>
-                More contacts
-                <ChevronRightIcon className={readLinkIcon} />
-              </div>
-            </div>
-          </div>
-          {/* LINK SET 4 & 5 TABLET */}
-
-          <div className="hidden lg:hidden md:flex">
-            {/* LINk SET 4 */}
-            <div className="flex flex-col space-y-4  w-1/3">
-              <div className="text-xl font-ranuaBold text-yellow  mt-10 lg:mt-0">
-                Insights
-              </div>
-              <Link to="/">
-                <div className="text-lg font-ranuaLight text-white mt-5 lg:mt-0">
-                  Data
-                </div>
-              </Link>
-
-              <Link to="/">
-                <div className="text-lg font-ranuaLight text-white mt-4 lg:mt-0">
-                  News & Views
-                </div>
-              </Link>
-            </div>
-
-            {/* LINK SET 5 */}
-            <div className="flex flex-col space-y-4 w-1/3">
+            <div className="lg:flex flex-col space-y-4">
               <div className="text-xl font-ranuaBold text-yellow  mt-10 lg:mt-0">
                 Contact
               </div>
